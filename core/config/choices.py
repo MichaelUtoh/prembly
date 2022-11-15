@@ -29,25 +29,11 @@ class UserStatus(models.TextChoices):
 
 
 class UserType(models.TextChoices):
-    SHOP_OWNER = "shop owner", "Shop owner"
-    CUSTOMER = "customer", "Customer"
-    ARCHIVED = "archived", "Archived"
-    ADMIN = "admin", "Admin"
+    EXPERT = "expert", "Expert"
+    FARMER = "farmer", "Farmer"
 
 
-class BusinessRating(models.TextChoices):
-    LEVEL_1 = "level 1", "Level 1"
-    LEVEL_2 = "level 2", "Level 2"
-    LEVEL_3 = "level 3", "Level 3"
-    LEVEL_4 = "level 4", "Level 4"
-    LEVEL_5 = "level 5", "Level 5"
-
-
-class ProductCategory(models.TextChoices):
-    RANDOM = "random", "Random"
-    FASHION = "fashion", "Fashion"
-    ELECTRONICS = "electronics", "Electronics"
-    FURNITURE = "furniture", "Furniture"
-    GROCERY = "grocery", "Grocery"
-    COMPUTERS = "computers", "Computers"
-    BOOKS = "books and literature", "Books & Literature"
+class PricingPlan(models.TextChoices):
+    MONTHLY = "monthly", "Monthly"
+    QUARTERLY = "quarterly", "Quarterly"
+    ANNUALLY = "annually", "annually"

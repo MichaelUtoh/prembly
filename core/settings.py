@@ -47,7 +47,8 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'drf_yasg',
     'rest_framework',
-    'core.accounts'
+    'core.accounts',
+    'core.smartfarm',
 ]
 
 MIDDLEWARE = [

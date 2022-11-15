@@ -4,7 +4,7 @@ from django.contrib.auth.models import AbstractUser, AbstractBaseUser, BaseUserM
 from django.contrib.auth.models import PermissionsMixin
 from django.db import models, transaction
 
-from core.config.choices import Gender, Title
+from core.config.choices import Gender, PricingPlan, Title, UserType
 
 # Create your models here.
 
@@ -48,6 +48,9 @@ class User(AbstractBaseUser, PermissionsMixin):
     gender = models.CharField(max_length=6, choices=Gender.choices, default=Gender.MALE)
     title = models.CharField(max_length=4, choices=Title.choices, default=Title.MR)
     address = models.CharField(max_length=255, blank=True)
+    account_type = models.CharField(
+        max_length=30, choices=UserType.choices, default=UserType.FARMER
+    )
     timestamp = models.DateTimeField(auto_now_add=True)
     is_active = models.BooleanField(default=True)
 

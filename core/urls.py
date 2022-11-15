@@ -11,7 +11,6 @@ from rest_framework import permissions, routers
 from core.accounts.api import UserDetailViewSet, UserLoginAPIView, UserRegisterAPIView
 
 
-
 schema_view = get_schema_view(
     openapi.Info(
         title="OSS",
@@ -52,7 +51,7 @@ if settings.DEBUG:
         ),
         re_path(r"auth/register", UserRegisterAPIView.as_view(), name="register"),
         re_path(r"auth/login", UserLoginAPIView.as_view(), name="login"),
-        path("admin/", admin.site.urls),
+        # path("admin/", admin.site.urls),
         # path("__debug__/", include(debug_toolbar.urls)),
     ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 
