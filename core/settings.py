@@ -90,10 +90,11 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
         'NAME': BASE_DIR / 'db.sqlite3',
-    } if DEBUG else dj_database_url.config(
-        default='postgresql://postgres:postgres@localhost:5432/hackathon',
-        conn_max_age=600
-    )
+    }
+    # } if DEBUG else dj_database_url.config(
+    #     default='postgresql://postgres:postgres@localhost:5432/hackathon',
+    #     conn_max_age=600
+    # )
 }
 
 

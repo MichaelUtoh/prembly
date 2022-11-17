@@ -1,14 +1,14 @@
 from django.db import models
 from django.conf import settings
 
+from core.config.choices import PricingPlans
+
+
 # Create your models here.
-class Farmer(models.Model):
-    user = models.ForeignKey(
-        settings.AUTH_USER_MODEL,
-        on_delete=models.CASCADE,
-        related_name="favorite_shops",
+class PricingPlan(models.Model):
+    duration = models.CharField(
+        max_length=9, choices=PricingPlans.choices, default=PricingPlans.MONTHLY
     )
-    user_image = models.ImageField(upload_to="")
-    nin_number = models.CharField(max_length=15)
-    nin_slip = models.ImageField(upload_to="")
-    
+    price = models.FloatField()
+    created_at = models.DateTimeField(auto_now_add=True, null=True)
+    updated_at = models.DateTimeField(auto_now=True, null=True)

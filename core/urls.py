@@ -9,6 +9,7 @@ from drf_yasg import openapi
 from rest_framework import permissions, routers
 
 from core.accounts.api import UserDetailViewSet, UserLoginAPIView, UserRegisterAPIView
+from core.smartfarm.api import PricingPlanViewSet
 
 
 schema_view = get_schema_view(
@@ -26,6 +27,7 @@ schema_view = get_schema_view(
 
 router = routers.SimpleRouter(trailing_slash=False)
 router.register(r"auth/users", UserDetailViewSet, basename="users")
+router.register(r"pricing", PricingPlanViewSet, basename="pricing")
 urlpatterns = router.urls
 
 

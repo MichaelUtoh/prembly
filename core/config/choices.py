@@ -33,7 +33,7 @@ class UserType(models.TextChoices):
     FARMER = "farmer", "Farmer"
 
 
-class PricingPlan(models.TextChoices):
+class PricingPlans(models.TextChoices):
     MONTHLY = "monthly", "Monthly"
     QUARTERLY = "quarterly", "Quarterly"
     ANNUALLY = "annually", "annually"
